@@ -1,7 +1,7 @@
  GRBL RAMPS 1.4 port  
  By ArSi arsi@arsi.sk  
  
- Modified again by Carlosgs to support RAMPS without any modification.  
+ Modified again by Carlosgs to support RAMPS without any re-wiring (i.e. if [MarlinForCyclone](https://github.com/carlosgs/MarlinForCyclone) worked straight away, this one will).  
  Pre-configured for Cyclone PCB Factory.  
  
  *IMPORTANT NOTE:* When configuring your own parameters, note that GRBL stores every setting into the EEPROM in the first boot and always uses those. If you need to change any hard-coded values here, make sure to uncomment the line settings.c:301 so GRBL re-loads the defaults every time.  
@@ -26,9 +26,9 @@
  (min Z disabled)  |   min Z                             |     disabled  
  digital pin 18    |   Z probe                           |     OK working  
 
-- pin 3 is labeled as min X endstop in RAMP
+- pin 3 is labeled as min X endstop in RAMPS
 - pin 14 is labeled as min Y
-- pin 18 is labeeld as min Z (connect the probe wires here)
+- pin 18 is labeled as min Z (connect the probe wires here)
 
  UNTESTED: Motor ON, motor direction, coolant, etc  
 ```
