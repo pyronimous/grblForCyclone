@@ -1,3 +1,26 @@
+ GRBL RAMPS 1.4 port
+ By ArSi arsi@arsi.sk
+**************************************************************************************
+ Steppers redirected to fastio.h from marlin firmware
+ min switches remaped to AUX-3, GBRL uses pin change interrupts
+ simple scheme to allow future porting of next releases
+ command buttons currently disabled
+ Ramps pins config moved to ramps.h
+ cpu_map.h - min switches
+ added GRBL_RAMPS1_4.ino for arduino IDE
+**************************************************************************************
+ Ramps 1.4         |    GRBL                             |    Test
+ X axis            |   X axis                            |     OK working
+ Z axis            |   Y axis  for dual motor Y axis     |     OK working
+ Y axis            |   Z axis                            |     OK working
+ Ramps AUX-3 pin 3 |   min X                             |     OK working
+ Ramps AUX-3 pin 4 |   min Y                             |     OK working
+ Ramps AUX-3 pin 5 |   min Z                             |     not tested
+ D10               |   motor ON                          |     not tested
+ D9                |   motor direction                   |     not tested
+ D8                |   coolant on                        |     not tested
+***************************************************************************************
+
 #Grbl - An embedded g-code interpreter and motion-controller for the Arduino/AVR328 microcontroller
 
 ***

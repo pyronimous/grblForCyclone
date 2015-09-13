@@ -22,7 +22,7 @@
   terms of the MIT-license. See COPYING for more details.  
     Copyright (c) 2009-2011 Simen Svale Skogsrud
     Copyright (c) 2011-2012 Sungeun K. Jeon
-*/  
+ */
 
 #include "system.h"
 #include "serial.h"

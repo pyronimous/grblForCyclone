@@ -29,9 +29,9 @@
 
 #ifdef DEFAULTS_GENERIC
   // Grbl generic default settings. Should work across different machines.
-  #define DEFAULT_X_STEPS_PER_MM 250.0
-  #define DEFAULT_Y_STEPS_PER_MM 250.0
-  #define DEFAULT_Z_STEPS_PER_MM 250.0
+#define DEFAULT_X_STEPS_PER_MM 33.3
+#define DEFAULT_Y_STEPS_PER_MM 33.3
+#define DEFAULT_Z_STEPS_PER_MM 320
   #define DEFAULT_X_MAX_RATE 500.0 // mm/min
   #define DEFAULT_Y_MAX_RATE 500.0 // mm/min
   #define DEFAULT_Z_MAX_RATE 500.0 // mm/min
@@ -111,10 +111,10 @@
   #define MM_PER_REV_XY (0.08*18*MM_PER_INCH) // 0.08 in belt pitch, 18 pulley teeth
   #define MICROSTEPS_Z 2
   #define STEP_REVS_Z 400
-  #define MM_PER_REV_Z 1.250 // 1.25 mm/rev leadscrew
-  #define DEFAULT_X_STEPS_PER_MM (MICROSTEPS_XY*STEP_REVS_XY/MM_PER_REV_XY)
-  #define DEFAULT_Y_STEPS_PER_MM (MICROSTEPS_XY*STEP_REVS_XY/MM_PER_REV_XY)
-  #define DEFAULT_Z_STEPS_PER_MM (MICROSTEPS_Z*STEP_REVS_Z/MM_PER_REV_Z)
+#define MM_PER_REV_Z 1.250 // 1.25 mm/rev leadscrew
+#define DEFAULT_X_STEPS_PER_MM 33.3
+#define DEFAULT_Y_STEPS_PER_MM 33.3
+#define DEFAULT_Z_STEPS_PER_MM 320
   #define DEFAULT_X_MAX_RATE 1000.0 // mm/min
   #define DEFAULT_Y_MAX_RATE 1000.0 // mm/min
   #define DEFAULT_Z_MAX_RATE 1000.0 // mm/min
@@ -137,8 +137,8 @@
   #define DEFAULT_INVERT_LIMIT_PINS 0 // false  
   #define DEFAULT_SOFT_LIMIT_ENABLE 0 // false
   #define DEFAULT_HARD_LIMIT_ENABLE 0  // false
-  #define DEFAULT_HOMING_ENABLE 0  // false
-  #define DEFAULT_HOMING_DIR_MASK 0 // move positive dir
+#define DEFAULT_HOMING_ENABLE 0  // false
+#define DEFAULT_HOMING_DIR_MASK 3 // move positive dir
   #define DEFAULT_HOMING_FEED_RATE 25.0 // mm/min
   #define DEFAULT_HOMING_SEEK_RATE 250.0 // mm/min
   #define DEFAULT_HOMING_DEBOUNCE_DELAY 250 // msec (0-65k)
