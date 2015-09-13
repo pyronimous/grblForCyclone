@@ -37,7 +37,7 @@
 
 
 // Default settings. Used when resetting EEPROM. Change to desired name in defaults.h
-#define DEFAULTS_SHAPEOKO
+#define DEFAULTS_CYCLONE_2_1
 
 // Serial baud rate
 #define BAUD_RATE 115200
@@ -60,7 +60,7 @@
 // If homing is enabled, homing init lock sets Grbl into an alarm state upon power up. This forces
 // the user to perform the homing cycle (or override the locks) before doing anything else. This is
 // mainly a safety feature to remind the user to home, since position is unknown to Grbl.
-//#define HOMING_INIT_LOCK // Comment to disable
+#define HOMING_INIT_LOCK // Comment to disable
 
 // Define the homing cycle patterns with bitmasks. The homing cycle first performs a search mode
 // to quickly engage the limit switches, followed by a slower locate mode, and finished by a short
@@ -84,7 +84,7 @@
 // Number of homing cycles performed after when the machine initially jogs to limit switches.
 // This help in preventing overshoot and should improve repeatability. This value should be one or 
 // greater.
-#define N_HOMING_LOCATE_CYCLE 2 // Integer (1-128)
+#define N_HOMING_LOCATE_CYCLE 1 // Integer (1-128)
 
 // After homing, Grbl will set by default the entire machine space into negative space, as is typical
 // for professional CNC machines, regardless of where the limit switches are located. Uncomment this 

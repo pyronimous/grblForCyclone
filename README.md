@@ -1,9 +1,14 @@
  GRBL RAMPS 1.4 port
  By ArSi arsi@arsi.sk
+ 
+ Modified again by Carlosgs to support RAMPS without any modification.  
+ Pre-configured for Cyclone PCB Factory.  
+ 
+ *IMPORTANT NOTE:* When configuring your own parameters, note that GRBL stores every setting into the EEPROM in the first boot and always uses those. If you need to change any hard-coded values here, make sure to uncomment the line settings.c:301 so GRBL re-loads the defaults every time.
+ 
 **************************************************************************************
  Steppers redirected to fastio.h from marlin firmware
- min switches remaped to AUX-3, GBRL uses pin change interrupts
- simple scheme to allow future porting of next releases
+ min switches remaped to the same position in RAMPS
  command buttons currently disabled
  Ramps pins config moved to ramps.h
  cpu_map.h - min switches
@@ -11,14 +16,18 @@
 **************************************************************************************
  Ramps 1.4         |    GRBL                             |    Test
  X axis            |   X axis                            |     OK working
- Z axis            |   Y axis  for dual motor Y axis     |     OK working
- Y axis            |   Z axis                            |     OK working
- Ramps AUX-3 pin 3 |   min X                             |     OK working
- Ramps AUX-3 pin 4 |   min Y                             |     OK working
- Ramps AUX-3 pin 5 |   min Z                             |     not tested
- D10               |   motor ON                          |     not tested
- D9                |   motor direction                   |     not tested
- D8                |   coolant on                        |     not tested
+ Y axis            |   Y axis                            |     OK working
+ Z axis            |   Z axis                            |     OK working
+ digital pin 3     |   min X                             |     OK working
+ digital pin 14    |   min Y                             |     OK working
+ (min Z disabled)  |   min Z                             |     disabled
+ digital pin 18    |   Z probe                           |     OK working
+
+- pin 3 is labeled as min X endstop in RAMPS
+- pin 14 is labeled as min Y
+- pin 18 is labeeld as min Z (connect the probe wires here)
+
+ UNTESTED: Motor ON, motor direction, coolant, etc
 ***************************************************************************************
 
 #Grbl - An embedded g-code interpreter and motion-controller for the Arduino/AVR328 microcontroller

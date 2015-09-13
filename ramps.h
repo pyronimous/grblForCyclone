@@ -32,13 +32,13 @@ extern "C" {
 #define X_DIR_PIN          55 //PF1 ( ADC1 )
 #define X_ENABLE_PIN       38 //PD7 ( T0 )
 
-#define Z_STEP_PIN         60 //PF6 ( ADC6 )
-#define Z_DIR_PIN          61 //PF7 ( ADC7 )
-#define Z_ENABLE_PIN       56 //PF2 ( ADC2 )
+#define Y_STEP_PIN         60 //PF6 ( ADC6 )
+#define Y_DIR_PIN          61 //PF7 ( ADC7 )
+#define Y_ENABLE_PIN       56 //PF2 ( ADC2 )
 
-#define Y_STEP_PIN         46 //PL3 ( OC5A )
-#define Y_DIR_PIN          48 //PL1 ( ICP5 )
-#define Y_ENABLE_PIN       62 //PK0 ( ADC8/PCINT16 )
+#define Z_STEP_PIN         46 //PL3 ( OC5A )
+#define Z_DIR_PIN          48 //PL1 ( ICP5 )
+#define Z_ENABLE_PIN       62 //PK0 ( ADC8/PCINT16 )
 
 #define SPINDLE_ENABLE_PIN 10
 #define SPINDLE_DIRECTION_PIN 9

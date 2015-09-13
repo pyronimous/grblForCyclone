@@ -32,6 +32,7 @@
 #include "motion_control.h"
 #include "limits.h"
 #include "report.h"
+#include <Arduino.h>
 
 // Homing axis search distance multiplier. Computed by this value times the axis max travel.
 #define HOMING_AXIS_SEARCH_SCALAR  1.5 // Must be > 1 to ensure limit switch will be engaged.
@@ -39,7 +40,7 @@
 
 void limits_init() 
 {
-  LIMIT_DDR &= ~(LIMIT_MASK); // Set as input pins
+  /*LIMIT_DDR &= ~(LIMIT_MASK); // Set as input pins
 
   if (bit_istrue(settings.flags,BITFLAG_INVERT_LIMIT_PINS)) {
     LIMIT_PORT &= ~(LIMIT_MASK); // Normal low operation. Requires external pull-down.
@@ -58,14 +59,24 @@ void limits_init()
     MCUSR &= ~(1<<WDRF);
     WDTCSR |= (1<<WDCE) | (1<<WDE);
     WDTCSR = (1<<WDP0); // Set time-out at ~32msec.
-  #endif
+  #endif*/
+  //SET_INPUT(3); // X
+  //SET_INPUT(14); // Y
+  //WRITE(3, 1); // enable internal pull-up resistor
+  //WRITE(14, 1); // enable internal pull-up resistor
+  pinMode(3,INPUT);
+  pinMode(14,INPUT);
+  digitalWrite(3,HIGH);
+  digitalWrite(14,HIGH);
 }
 
 
 void limits_disable()
 {
-  LIMIT_PCMSK &= ~LIMIT_MASK;  // Disable specific pins of the Pin Change Interrupt
+  /*LIMIT_PCMSK &= ~LIMIT_MASK;  // Disable specific pins of the Pin Change Interrupt
   PCICR &= ~(1 << LIMIT_INT);  // Disable Pin Change Interrupt
+  */
+  
 }
 
 
@@ -81,7 +92,7 @@ void limits_disable()
 // special pinout for an e-stop, but it is generally recommended to just directly connect
 // your e-stop switch to the Arduino reset pin, since it is the most correct way to do this.
 #ifndef ENABLE_SOFTWARE_DEBOUNCE
-  ISR(LIMIT_INT_vect) // DEFAULT: Limit pin change interrupt process. 
+  /*ISR(LIMIT_INT_vect) // DEFAULT: Limit pin change interrupt process. 
   {
     // Ignore limit switches if already in an alarm state or in-process of executing an alarm.
     // When in the alarm state, Grbl should have been reset or will force a reset, so any pending 
@@ -94,7 +105,7 @@ void limits_disable()
         bit_true_atomic(sys.execute, (EXEC_ALARM | EXEC_CRIT_EVENT)); // Indicate hard limit critical event
       }
     }
-  }  
+  }*/
 #else // OPTIONAL: Software debounce limit pin routine.
   // Upon limit pin change, enable watchdog timer to create a short delay. 
   ISR(LIMIT_INT_vect) { if (!(WDTCSR & (1<<WDIE))) { WDTCSR |= (1<<WDIE); } }
@@ -189,7 +200,7 @@ void limits_go_home(uint8_t cycle_mask)
     st_wake_up(); // Initiate motion
     do {
       // Check limit state. Lock out cycle axes when they change.
-      limit_state = LIMIT_PIN;
+      limit_state = ((digitalRead(3)<<X_LIMIT_BIT)|(digitalRead(14)<<Y_LIMIT_BIT)|(0<<Z_LIMIT_BIT));//LIMIT_PIN;
       if (invert_pin) { limit_state ^= LIMIT_MASK; }
       for (idx=0; idx<N_AXIS; idx++) {
         if (axislock & step_pin[idx]) {
@@ -270,7 +281,7 @@ void limits_soft_check(float *target)
 {
   uint8_t idx;
   uint8_t soft_limit_error = false;
-  for (idx=0; idx<N_AXIS; idx++) {
+  for (idx=0; idx<N_AXIS-1; idx++) { // removed checking for Z endstop in Cyclone
    
     #ifdef HOMING_FORCE_SET_ORIGIN
       // When homing forced set origin is enabled, soft limits checks need to account for directionality.

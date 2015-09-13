@@ -298,7 +298,7 @@ void settings_init() {
     
     report_grbl_settings();
   }
-
+  //settings_restore_global_settings(); // UNCOMMENT THIS TO RE-LOAD DEFAULT SETTINGS EVERY TIME. Once the values work, remember to comment it again so the EEPROM is not written every single time (would damage it longterm)
   // Check all parameter data into a dummy variable. If error, reset to zero, otherwise do nothing.
   float coord_data[N_AXIS];
   uint8_t i;

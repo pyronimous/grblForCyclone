@@ -17,7 +17,8 @@
   You should have received a copy of the GNU General Public License
   along with Grbl.  If not, see <http://www.gnu.org/licenses/>.
 */
-  
+
+#include <Arduino.h>
 #include "system.h"
 #include "settings.h"
 #include "probe.h"
@@ -29,19 +30,21 @@ uint8_t probe_invert_mask;
 // Probe pin initialization routine.
 void probe_init() 
 {
-  PROBE_DDR &= ~(PROBE_MASK); // Configure as input pins
+  /*PROBE_DDR &= ~(PROBE_MASK); // Configure as input pins
   if (bit_istrue(settings.flags,BITFLAG_INVERT_PROBE_PIN)) { 
     PROBE_PORT &= ~(PROBE_MASK); // Normal low operation. Requires external pull-down.
     probe_invert_mask = 0;
   } else {
     PROBE_PORT |= PROBE_MASK;    // Enable internal pull-up resistors. Normal high operation.
     probe_invert_mask = PROBE_MASK; 
-  }
+  }*/
+  pinMode(18,INPUT);
+  digitalWrite(18,HIGH);
 }
 
 
 // Returns the probe pin state. Triggered = true. Called by gcode parser and probe state monitor.
-uint8_t probe_get_state() { return((PROBE_PIN & PROBE_MASK) ^ probe_invert_mask); }
+uint8_t probe_get_state() { return !digitalRead(18); }//return((PROBE_PIN & PROBE_MASK) ^ probe_invert_mask); }
 
 
 // Monitors probe pin state and records the system position when detected. Called by the
