@@ -4,6 +4,18 @@
  Modified again by Carlosgs to support RAMPS without any re-wiring (i.e. if [MarlinForCyclone](https://github.com/carlosgs/MarlinForCyclone) worked straight away, this one will).  
  Pre-configured for Cyclone PCB Factory.  
 
+How to flash this GRBL firmware
+--
+Download this repository ([link](https://github.com/carlosgs/grblForCyclone/archive/master.zip)) and open the file **grblForCyclone.ino** from the [**Arduino IDE**](https://www.arduino.cc/en/Main/Software).  
+Select the board you are using from the "Tools->Board" menu:
+* If you are using RAMPS, select **"Arduino/Genuino Mega or Mega 2560"**.
+* If you are using Sanguinololu, [click here](ArduinoIDE_addonForSanguinololu).
+* If you are using a different setup, check the official GRBL <https://github.com/grbl/grbl>
+
+Once you have selected the correct board and USB port, you can click "Upload" to flash the GRBL firmware. Success!! :-)  
+
+(Tested with version 1.6.5 of the Arduino IDE, 29/Sep/2015)  
+
 How to connect the XYZ motors, XY endstops and Z probe
 --
 
@@ -68,7 +80,7 @@ UNTESTED:
 
 Sanguinololu support
 --
-Check <ArduinoIDE_addonForSanguinololu> for additional documentation regarding Sanguinololu boards.
+Check [this folder](ArduinoIDE_addonForSanguinololu) for additional documentation regarding Sanguinololu boards.
 
 
 ***************************************************************************************
