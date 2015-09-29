@@ -38,13 +38,13 @@ void probe_init()
     PROBE_PORT |= PROBE_MASK;    // Enable internal pull-up resistors. Normal high operation.
     probe_invert_mask = PROBE_MASK; 
   }*/
-  pinMode(18,INPUT);
-  digitalWrite(18,HIGH);
+  pinMode(PROBE_PIN,INPUT);
+  digitalWrite(PROBE_PIN,HIGH);
 }
 
 
 // Returns the probe pin state. Triggered = true. Called by gcode parser and probe state monitor.
-uint8_t probe_get_state() { return !digitalRead(18); }//return((PROBE_PIN & PROBE_MASK) ^ probe_invert_mask); }
+uint8_t probe_get_state() { return !digitalRead(PROBE_PIN); }//return((PROBE_PIN & PROBE_MASK) ^ probe_invert_mask); }
 
 
 // Monitors probe pin state and records the system position when detected. Called by the

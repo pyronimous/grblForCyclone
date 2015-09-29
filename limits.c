@@ -60,14 +60,10 @@ void limits_init()
     WDTCSR |= (1<<WDCE) | (1<<WDE);
     WDTCSR = (1<<WDP0); // Set time-out at ~32msec.
   #endif*/
-  //SET_INPUT(3); // X
-  //SET_INPUT(14); // Y
-  //WRITE(3, 1); // enable internal pull-up resistor
-  //WRITE(14, 1); // enable internal pull-up resistor
-  pinMode(3,INPUT);
-  pinMode(14,INPUT);
-  digitalWrite(3,HIGH);
-  digitalWrite(14,HIGH);
+  pinMode(XLIM_PIN,INPUT);
+  pinMode(YLIM_PIN,INPUT);
+  digitalWrite(XLIM_PIN,HIGH);
+  digitalWrite(YLIM_PIN,HIGH);
 }
 
 
@@ -200,7 +196,7 @@ void limits_go_home(uint8_t cycle_mask)
     st_wake_up(); // Initiate motion
     do {
       // Check limit state. Lock out cycle axes when they change.
-      limit_state = ((digitalRead(3)<<X_LIMIT_BIT)|(digitalRead(14)<<Y_LIMIT_BIT)|(0<<Z_LIMIT_BIT));//LIMIT_PIN;
+      limit_state = ((digitalRead(XLIM_PIN)<<X_LIMIT_BIT)|(digitalRead(YLIM_PIN)<<Y_LIMIT_BIT)|(0<<Z_LIMIT_BIT));//LIMIT_PIN;
       if (invert_pin) { limit_state ^= LIMIT_MASK; }
       for (idx=0; idx<N_AXIS; idx++) {
         if (axislock & step_pin[idx]) {

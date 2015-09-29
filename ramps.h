@@ -16,34 +16,6 @@ extern "C" {
 #include<stdint.h>
 #include"fastio.h"
 
-
-
-
-    // Ramps PB3 ( MISO/PCINT3 ) Digital pin 50 (MISO) ->Ramps AUX-3 pin 3
-    // Ramps PB2 ( MOSI/PCINT2 ) Digital pin 51 (MOSI) ->Ramps AUX-3 pin 4
-    // Ramps PB1 ( SCK/PCINT1 ) Digital pin 52 (SCK) -> Ramps AUX-3 pin 5
-    // Motor ON PB4 - 10
-    // Motor Dir PH6 - 9
-    // Coolant PH6 - 8
-
-    
-
-#define X_STEP_PIN         54 //PF0 ( ADC0 )
-#define X_DIR_PIN          55 //PF1 ( ADC1 )
-#define X_ENABLE_PIN       38 //PD7 ( T0 )
-
-#define Y_STEP_PIN         60 //PF6 ( ADC6 )
-#define Y_DIR_PIN          61 //PF7 ( ADC7 )
-#define Y_ENABLE_PIN       56 //PF2 ( ADC2 )
-
-#define Z_STEP_PIN         46 //PL3 ( OC5A )
-#define Z_DIR_PIN          48 //PL1 ( ICP5 )
-#define Z_ENABLE_PIN       62 //PK0 ( ADC8/PCINT16 )
-
-#define SPINDLE_ENABLE_PIN 10
-#define SPINDLE_DIRECTION_PIN 9
-#define COOLANT_FLOOD_PIN 8
-
 #define CHECK(var,pos) ((var) & (1<<(pos)))
 
     extern void rampsInitCoolant();

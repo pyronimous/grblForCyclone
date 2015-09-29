@@ -16,6 +16,9 @@
 
 **************************************************************************************
 
+How to connect the XYZ motors, XY endstops and Z probe
+--
+
 ```
  Ramps 1.4         |    GRBL                             |    Test  
  X axis            |   X axis                            |     OK working  
@@ -23,14 +26,37 @@
  Z axis            |   Z axis                            |     OK working  
  digital pin 3     |   min X                             |     OK working  
  digital pin 14    |   min Y                             |     OK working  
- (min Z disabled)  |   min Z                             |     disabled  
+ (min Z disabled)  |   min Z                             |     DISABLED  
  digital pin 18    |   Z probe                           |     OK working  
 
-- pin 3 is labeled as min X endstop in RAMPS
+- pin 3  is labeled as min X endstop in RAMPS
 - pin 14 is labeled as min Y
 - pin 18 is labeled as min Z (connect the probe wires here)
 
- UNTESTED: Motor ON, motor direction, coolant, etc  
+UNTESTED:
+- Spindle ON:        digital pin 10 (one of the transistor outputs)
+- Spindle direction: digital pin 9  (one of the transistor outputs)
+- Coolant ON:        digital pin 8  (one of the transistor outputs)
+
+
+  Sanguinololu 1.3a|    GRBL                             |    Test  
+ X axis            |   X axis                            |     OK working  
+ Y axis            |   Y axis                            |     OK working  
+ Z axis            |   Z axis                            |     OK working  
+ digital pin 18    |   min X                             |     OK working  
+ digital pin 19    |   min Y                             |     OK working  
+ (min Z disabled)  |   min Z                             |     DISABLED  
+ digital pin 20    |   Z probe                           |     OK working  
+
+- pin 18 is labeled as X-STOP (endstop) in Sanguinololu
+- pin 19 is labeled as Y-STOP
+- pin 20 is labeled as Z-STOP (connect the probe wires here)
+
+UNTESTED:
+- Spindle ON:        Hotend power output
+- Spindle direction: Extruder direction pin
+- Coolant ON:        Heat-bed power output
+
 ```
 
 ***************************************************************************************
