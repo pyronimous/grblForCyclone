@@ -3,18 +3,6 @@
  
  Modified again by Carlosgs to support RAMPS without any re-wiring (i.e. if [MarlinForCyclone](https://github.com/carlosgs/MarlinForCyclone) worked straight away, this one will).  
  Pre-configured for Cyclone PCB Factory.  
- 
- *IMPORTANT NOTE:* When configuring your own parameters, note that GRBL stores every setting into the EEPROM in the first boot and always uses those. If you need to change any hard-coded values here, make sure to uncomment the line settings.c:301 so GRBL re-loads the defaults every time.  
- 
-**************************************************************************************
- Steppers redirected to fastio.h from marlin firmware  
- min switches remaped to the same position in RAMPS  
- command buttons currently disabled  
- Ramps pins config moved to ramps.h  
- cpu_map.h - min switches  
- added GRBL_RAMPS1_4.ino for arduino IDE  
-
-**************************************************************************************
 
 How to connect the XYZ motors, XY endstops and Z probe
 --
@@ -58,6 +46,25 @@ UNTESTED:
 - Coolant ON:        Heat-bed power output
 
 ```
+
+
+ *IMPORTANT NOTE:* When configuring your own parameters, note that GRBL stores every setting into the EEPROM in the first boot and always uses those. If you need to change any hard-coded values here, make sure to uncomment the line settings.c:301 so GRBL re-loads the defaults every time.  
+ 
+**************************************************************************************
+ Steppers redirected to fastio.h from marlin firmware  
+ min switches remaped to the same position in RAMPS  
+ command buttons currently disabled  
+ Ramps pins config moved to ramps.h  
+ cpu_map.h - min switches  
+ added GRBL_RAMPS1_4.ino for arduino IDE  
+
+**************************************************************************************
+
+
+Sanguinololu support
+--
+Check <ArduinoIDE_addonForSanguinololu> for additional documentation regarding Sanguinololu boards.
+
 
 ***************************************************************************************
 
