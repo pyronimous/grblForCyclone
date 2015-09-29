@@ -17,3 +17,9 @@ Then running the Arduino IDE, you'll see new options in the "Tools" menu:
 
 **ATmega644P** is probably the one on board your Sanguinololu.  
 
+
+Developed by Kristian Sloth Lauszus, 2012
+--
+Obtained from: <https://github.com/Lauszus/Sanguino>  
+The code is released under the GNU General Public License.
+
