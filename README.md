@@ -8,6 +8,8 @@ How to connect the XYZ motors, XY endstops and Z probe
 --
 
 ```
+OPTION A: USING RAMPS SHIELD
+
  Ramps 1.4         |    GRBL                             |    Test  
  X axis            |   X axis                            |     OK working  
  Y axis            |   Y axis                            |     OK working  
@@ -25,7 +27,10 @@ UNTESTED:
 - Spindle ON:        digital pin 10 (one of the transistor outputs)
 - Spindle direction: digital pin 9  (one of the transistor outputs)
 - Coolant ON:        digital pin 8  (one of the transistor outputs)
+```
 
+```
+OPTION B: USING SANGUINOLOLU BOARD
 
   Sanguinololu 1.3a|    GRBL                             |    Test  
  X axis            |   X axis                            |     OK working  
