@@ -12,6 +12,10 @@ Select the board you are using from the "Tools->Board" menu:
 * If you are using Sanguinololu, [click here](ArduinoIDE_addonForSanguinololu).
 * If you are using a different setup, check the official GRBL <https://github.com/grbl/grbl>
 
+Next, if you want to modify any default parameter, do so in "[defaults.h](defaults.h)".
+*IMPORTANT NOTE: When configuring your own parameters, note that GRBL stores every setting into the EEPROM in the first boot and always uses those. If you need to change any hard-coded values here, make sure to uncomment the line settings.c:301 so GRBL re-loads the defaults every time.*  
+
+
 Once you have selected the correct board and USB port, you can click "Upload" to flash the GRBL firmware. Success!! :-)  
 
 (Tested with version 1.6.5 of the Arduino IDE, 29/Sep/2015)  
@@ -65,7 +69,7 @@ UNTESTED:
 ```
 
 
- *IMPORTANT NOTE:* When configuring your own parameters, note that GRBL stores every setting into the EEPROM in the first boot and always uses those. If you need to change any hard-coded values here, make sure to uncomment the line settings.c:301 so GRBL re-loads the defaults every time.  
+
  
 **************************************************************************************
  Steppers redirected to fastio.h from marlin firmware  
