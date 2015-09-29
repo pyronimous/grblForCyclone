@@ -13,7 +13,7 @@ How to flash the GRBL firmware
 * If you are using Sanguinololu, [click here](ArduinoIDE_addonForSanguinololu).
 * If you are using a different setup, check the official GRBL <https://github.com/grbl/grbl>
 
-3) Next, **if you want to modify any default parameters, do so in "[defaults.h](defaults.h)"**.
+3) Next, **if you want to modify any default parameters, do so in "[defaults.h](defaults.h)"** (end of the file, below DEFAULTS\_CYCLONE\_2\_1).
 *IMPORTANT NOTE: When configuring your own parameters, note that GRBL stores every setting into the EEPROM in the first boot and always uses those. If you need to change any hard-coded values here, make sure to uncomment the line settings.c:301 so GRBL re-loads the defaults every time.*  
 
 
