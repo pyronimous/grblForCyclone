@@ -1,10 +1,10 @@
  GRBL RAMPS 1.4 port  
  By ArSi arsi@arsi.sk  
  
- Modified again by Carlosgs to support RAMPS without any re-wiring (i.e. if [MarlinForCyclone](https://github.com/carlosgs/MarlinForCyclone) worked straight away, this one will).  
- Pre-configured for Cyclone PCB Factory.  
+ Modified again by Carlosgs to **support RAMPS and Sanguinololu** without any re-wiring (i.e. if [MarlinForCyclone](https://github.com/carlosgs/MarlinForCyclone) worked straight away, this one will).  
+ Pre-configured for [Cyclone PCB Factory v2.X](http://reprap.org/wiki/Cyclone_PCB_Factory).  
 
-How to flash this GRBL firmware
+How to flash the GRBL firmware
 --
 Download this repository ([link](https://github.com/carlosgs/grblForCyclone/archive/master.zip)) and open the file **grblForCyclone.ino** from the [**Arduino IDE**](https://www.arduino.cc/en/Main/Software).  
 Select the board you are using from the "Tools->Board" menu:
