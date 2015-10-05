@@ -17,7 +17,7 @@ How to flash the GRBL firmware
 *IMPORTANT NOTE: When configuring your own parameters, note that GRBL stores every setting into the EEPROM in the first boot and always uses those. If you need to change any hard-coded values here, make sure to uncomment the line settings.c:301 so GRBL re-loads the defaults every time.*  
 
 
-4) Finally, once you have selected the correct board and USB port, you can **click "Upload" to flash the GRBL firmware**. Success!! :-)  
+4) Finally, once you have selected the correct board and USB port, you can **click "Upload" to flash the GRBL firmware**. Success!! :-) **[Click here](https://github.com/carlosgs/grblForCyclone/wiki) for a GRBL/bCNC usage tutorial**  
 
 (Tested with version 1.6.5 of the Arduino IDE, 29/Sep/2015)  
 
