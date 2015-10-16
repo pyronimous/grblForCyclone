@@ -6,7 +6,7 @@
 
 How to flash the GRBL firmware
 --
-1) Download this repository ([link](https://github.com/carlosgs/grblForCyclone/archive/master.zip)) and open the file **grblForCyclone.ino** from the [**Arduino IDE**](https://www.arduino.cc/en/Main/Software).  
+1) Download this repository ([link](https://github.com/carlosgs/grblForCyclone/archive/grblForCyclone.zip)), extract the zip file, and open the file **grblForCyclone.ino** from the [**Arduino IDE**](https://www.arduino.cc/en/Main/Software).  
 
 2) **Select the board you are using from the "Tools->Board" menu**:
 * If you are using RAMPS, select **"Arduino/Genuino Mega or Mega 2560"**.
