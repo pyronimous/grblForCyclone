@@ -315,7 +315,7 @@ void limits_soft_check(float *target)
 {
   uint8_t idx;
   uint8_t soft_limit_error = false;
-  for (idx=0; idx<N_AXIS; idx++) {
+  for (idx=0; idx<N_AXIS-1; idx++) {
    
     #ifdef HOMING_FORCE_SET_ORIGIN
       // When homing forced set origin is enabled, soft limits checks need to account for directionality.

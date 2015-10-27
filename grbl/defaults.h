@@ -88,4 +88,10 @@
   #include "defaults/defaults_simulator.h"
 #endif
 
+#ifdef DEFAULTS_CYCLONE
+  // Grbl settings for Cyclone PCB Factory
+  // https://github.com/carlosgs/Cyclone-PCB-Factory
+  #include "defaults/defaults_cyclone.h"
+#endif
+
 #endif

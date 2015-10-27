@@ -1,3 +1,21 @@
+
+GRBL for Cyclone, CNC Shield version
+==
+
+**This is CNC Shield version (a mod of the latest GRBL firmware -27/Oct/2015- to include Cyclone's parameters**  
+Changes from main branch (see the source code differences [here](https://github.com/grbl/grbl/compare/master...carlosgs:grblForCyclone_CNCShield))  
+
+* Added work dimensions for [Cyclone PCB Factory](http://reprap.org/wiki/Cyclone_PCB_Factory)
+* The Z endstop is fully ignored
+* Coordinate system reference (origin) is the front-left corner of the work area; this matches the way 3D printer's represent coordinates (GRBL uses negative values by default)
+
+
+IMPORTANT: If you use RAMPS or Sanguinololu, look here instead:
+--
+<https://github.com/carlosgs/grblForCyclone>  
+
+
+
 ![GitHub Logo](/doc/media/Grbl Logo 250px.png)
 
 
