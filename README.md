@@ -6,6 +6,8 @@
 
 How to flash the GRBL firmware
 --
+0) Before every installation/update of GRBL, make sure to [**clear the EEPROM memory**](https://www.arduino.cc/en/Tutorial/EEPROMClear). This will reset the calibration values to zero, avoiding further problems (thanks to Jungle and others in [the mail list](https://groups.google.com/forum/#!forum/cyclone-pcb-factory) for submitting this issue)  
+
 1) Download this repository ([link](https://github.com/carlosgs/grblForCyclone/archive/grblForCyclone.zip)), extract the zip file, and open the file **grblForCyclone.ino** from the [**Arduino IDE**](https://www.arduino.cc/en/Main/Software).  
 
 2) **Select the board you are using from the "Tools->Board" menu**:
@@ -14,8 +16,6 @@ How to flash the GRBL firmware
 * If you are using CNCshield, [click here](https://github.com/carlosgs/grblForCyclone/tree/grblForCyclone_CNCShield) for a modification of the latest GRBL firmware. Ignore the rest of this page; instead follow the [official installation instructions](https://github.com/grbl/grbl/wiki/Flashing-Grbl-to-an-Arduino).
 
 3) Next, **if you want to modify any default parameters, do so in "[defaults.h](defaults.h)"** (end of the file, below DEFAULTS\_CYCLONE\_2\_1).
-*IMPORTANT NOTE: When configuring your own parameters, note that GRBL stores every setting into the EEPROM in the first boot and always uses those. If you need to change any hard-coded values here, make sure to uncomment the line settings.c:301 so GRBL re-loads the defaults every time.*  
-
 
 4) Finally, once you have selected the correct board and USB port, you can **click "Upload" to flash the GRBL firmware**. Success!! :-) **[Click here](https://github.com/carlosgs/grblForCyclone/wiki) for a GRBL/bCNC usage tutorial**  
 
