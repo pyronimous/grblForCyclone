@@ -87,11 +87,11 @@ extern "C" {
         if (CHECK(value, STEPPERS_DISABLE_BIT)) {
             WRITE(X_ENABLE_PIN, 1);
             WRITE(Y_ENABLE_PIN, 1);
-            WRITE(X_ENABLE_PIN, 1);
+            WRITE(Z_ENABLE_PIN, 1);
         } else {
             WRITE(X_ENABLE_PIN, 0);
             WRITE(Y_ENABLE_PIN, 0);
-            WRITE(X_ENABLE_PIN, 0);
+            WRITE(Z_ENABLE_PIN, 0);
         }
     }
 
@@ -134,9 +134,9 @@ extern "C" {
             WRITE(Y_DIR_PIN, 0);
         }
         if (CHECK(value, Z_DIRECTION_BIT)) {
-            WRITE(Z_DIR_PIN, 0);
-        } else {
             WRITE(Z_DIR_PIN, 1);
+        } else {
+            WRITE(Z_DIR_PIN, 0);
         }
     }
 
