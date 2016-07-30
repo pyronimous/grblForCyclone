@@ -37,7 +37,8 @@
 
 
 // Default settings. Used when resetting EEPROM. Change to desired name in defaults.h
-#define DEFAULTS_CYCLONE_2_1
+// #define DEFAULTS_CYCLONE_2_1
+#define DEFAULTS_MPCNC
 
 // Serial baud rate
 #define BAUD_RATE 115200

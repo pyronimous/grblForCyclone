@@ -305,4 +305,43 @@
   #define DEFAULT_HOMING_PULLOFF 0.0 // mm (distance that the axis move after homing)
 #endif
 
+#ifdef DEFAULTS_MPCNC
+  #define MICROSTEPS 32
+  #define STEPS_PER_REV 200.0
+  #define MM_PER_REV 1.25 // 1.25 mm/rev leadscrew
+  #define BELT_PITCH 2
+  #define PULLEY_TEETH_COUNT 16
+  #define DEFAULT_X_STEPS_PER_MM (STEPS_PER_REV * MICROSTEPS / (BELT_PITCH * PULLEY_TEETH_COUNT))
+  #define DEFAULT_Y_STEPS_PER_MM (STEPS_PER_REV * MICROSTEPS / (BELT_PITCH * PULLEY_TEETH_COUNT))
+  #define DEFAULT_Z_STEPS_PER_MM (STEPS_PER_REV * MICROSTEPS / MM_PER_REV)
+  #define DEFAULT_X_MAX_RATE 85 * 60.0 // mm/min
+  #define DEFAULT_Y_MAX_RATE 85 * 60.0 // mm/min
+  #define DEFAULT_Z_MAX_RATE 2.5 * 60.0 // mm/min
+  #define DEFAULT_X_ACCELERATION (50.0 * 60 * 60) // 50*60*60 mm/min^2 = 50 mm/sec^2
+  #define DEFAULT_Y_ACCELERATION (50.0 * 60 * 60) // 50*60*60 mm/min^2 = 50 mm/sec^2
+  #define DEFAULT_Z_ACCELERATION (16.0 * 60 * 60) // 50*60*60 mm/min^2 = 50 mm/sec^2
+  #define DEFAULT_X_MAX_TRAVEL 800.0 // mm
+  #define DEFAULT_Y_MAX_TRAVEL 650.0 // mm
+  #define DEFAULT_Z_MAX_TRAVEL 160.0 // mm
+  #define DEFAULT_STEP_PULSE_MICROSECONDS 10
+  #define DEFAULT_STEPPING_INVERT_MASK 0
+  #define DEFAULT_DIRECTION_INVERT_MASK ((0<<X_AXIS) | (0<<Y_AXIS) | (0<<Z_AXIS)) // note the value for the Z_AXIS was inverted in June 2016 for consistency reasons
+  #define DEFAULT_STEPPER_IDLE_LOCK_TIME 255 // msec (0-254, 255 keeps steppers enabled)
+  #define DEFAULT_STATUS_REPORT_MASK ((BITFLAG_RT_STATUS_MACHINE_POSITION) | (BITFLAG_RT_STATUS_WORK_POSITION))
+  #define DEFAULT_JUNCTION_DEVIATION 0.02 // mm
+  #define DEFAULT_ARC_TOLERANCE 0.002 // mm
+  #define DEFAULT_REPORT_INCHES 0 // false
+  #define DEFAULT_AUTO_START 1 // true
+  #define DEFAULT_INVERT_ST_ENABLE 0 // false
+  #define DEFAULT_INVERT_LIMIT_PINS 0 // false
+  #define DEFAULT_SOFT_LIMIT_ENABLE 1 // true
+  #define DEFAULT_HARD_LIMIT_ENABLE 0  // false
+  #define DEFAULT_HOMING_ENABLE 0  // true
+  #define DEFAULT_HOMING_DIR_MASK ((1<<X_AXIS) | (1<<Y_AXIS) | (0<<Z_AXIS)) // in Cyclone, z axis is left to move upwards, in case Z homing is triggered (there is no Z endstop!)
+  #define DEFAULT_HOMING_FEED_RATE 50.0 // mm/min (slower feed rate to "bump" the endstops)
+  #define DEFAULT_HOMING_SEEK_RATE 635.0 // mm/min (will saturate to MAX_RATE)
+  #define DEFAULT_HOMING_DEBOUNCE_DELAY 250 // msec (0-65k)
+  #define DEFAULT_HOMING_PULLOFF 0.0 // mm (distance that the axis move after homing)
+#endif
+
 #endif
